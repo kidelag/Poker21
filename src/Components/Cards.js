@@ -1,3 +1,5 @@
+const idDeck = "";
+
 
 const Cards = async (cardNumber) => {
 	return displayCards(cardNumber);
@@ -7,6 +9,7 @@ const initDeck = async () => {
 	const deckFetch = await fetch(
 	  "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
 	);
+  
 	return await deckFetch.json();
 };
 
