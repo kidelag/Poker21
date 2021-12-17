@@ -14,10 +14,6 @@ document.getElementById("showIdDeck").addEventListener("click", function() {
   if(!end){
 
   drawCard(idDeck.deck_id);
-  document.getElementById("setup").innerHTML += "<div id='uniteCard'>" + 
-    "<div id='textCard'>" + arrCard.cards[0].value + " and " + arrCard.cards[0].suit + "</div>" + 
-    "<img id='imgCard' src=" + arrCard.cards[0].image + ">" +
-  "</div>";
   }  
 })
 
@@ -45,12 +41,12 @@ document.getElementById("stopTheGame").addEventListener("click", function() {
   }
 })
 
-const test = async () => {
-  while(true){
-    setTimeout(() => {
-      console.log('value =',valueAllCards)
-    },1500)
-  }
-}
+// const test = async () => {
+//   while(true){
+//     setTimeout(() => {
+//       console.log('value =',valueAllCards)
+//     },1500)
+//   }
+// }
 
 // test();

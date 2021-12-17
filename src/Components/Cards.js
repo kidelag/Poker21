@@ -42,10 +42,16 @@ const drawCard = async (deckID) => {
 
     document.getElementById("value").innerHTML = "<div>Value = " + valueAllCards + "</div>";
 
+    document.getElementById("setup").innerHTML += "<div id='uniteCard'>" + 
+      "<div id='textCard'>" + arrCard.cards[0].value + " and " + arrCard.cards[0].suit + "</div>" + 
+      "<img id='imgCard' src=" + arrCard.cards[0].image + ">" +
+    "</div>";
+
     if(valueAllCards > 21){
       end = true;
       document.getElementById("state").innerHTML = "C'est perdu"
     }
+
 
     return await cardsFetch;
 
