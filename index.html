@@ -4,11 +4,21 @@
 <head>
 	<title>Poker 21</title>
 	<meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/styles.css">
 </head>
 
 <body>
     <!-- Target Balise -->
-	    <div id="app"></div>
+	    <div id="app">
+            <button id="initDeck">Shuffle card</button>
+            <button id="showIdDeck" style="display: none">Show next card</button>
+            <button id="stopTheGame"style="display:none">Stop the game</button>
+            <div id="state">Aucune partie en cours</div>
+            <div id="value">value = 0</div>
+            <div class="displayCards">
+                <div id="setup"></div>
+            </div>
+        </div>
     <!-- Target Balise -->
 
     <!-- Insert all Components file here -->

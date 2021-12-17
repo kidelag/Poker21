@@ -1,0 +1,7 @@
+#setup{
+    display: flex;
+}
+
+#setup #uniteCard{
+    flex: auto;
+}
