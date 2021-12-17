@@ -40,6 +40,13 @@ const drawCard = async (deckID) => {
 
     valueAllCards += parseInt(valueCard);
 
+    document.getElementById("value").innerHTML = "<div>Value = " + valueAllCards + "</div>";
+
+    if(valueAllCards > 21){
+      end = true;
+      document.getElementById("state").innerHTML = "C'est perdu"
+    }
+
     return await cardsFetch;
 
 }
