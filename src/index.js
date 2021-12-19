@@ -25,17 +25,19 @@ document.getElementById("stopTheGame").addEventListener("click", function() {
     }
     else {
 
-      drawCard(idDeck.deck_id);
-      document.getElementById("finalCard").innerHTML = "<div>La dernière carte est le" + arrCard.cards[0].value + " de " + arrCard.cards[0].suit + "</div>";
-      
       if(valueAllCards < 21) {
         drawCard(idDeck.deck_id)
+        document.getElementById("finalCard").innerHTML = "<div>La dernière carte est le " + arrCard.cards[0].value + " de " + arrCard.cards[0].suit + "</div>";
+      
         if(valueAllCards > 21){
           document.getElementById("state").innerHTML = "C'est gagné";
         }
         else{
-          document.getElementById("state").innerHTML = "C'est perdu"
+          document.getElementById("state").innerHTML = "C'est perdu";
         }
+      }
+      else{
+        document.getElementById("state").innerHTML = "C'est perdu";
       }
     } 
   }

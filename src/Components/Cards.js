@@ -9,6 +9,14 @@ let valueAllCards = 0;
 // };
 
 const initDeck = async () => {
+  
+  document.getElementById("setup").innerHTML = "<div></div>";
+  document.getElementById("value").innerHTML = "<div>Value = 0</div>";
+  document.getElementById("finalCard").innerHTML = "<div></div>";
+  arrCard = [];
+  valueCard = 0;
+  valueAllCards = 0;
+
 	const deckFetch = await fetch(
 	  "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
 	).then(response => response.json())
@@ -59,13 +67,13 @@ const drawCard = async (deckID) => {
 
 
 
-const displayCards = async () => {
+// const displayCards = async () => {
 
-    const cardArray = await drawCard();
+//     const cardArray = await drawCard();
 
-    const content = cardArray.cards.map((item, key) => (
-        `<img src="${item.image}"/>`
-      ));
+//     const content = cardArray.cards.map((item, key) => (
+//         `<img src="${item.image}"/>`
+//       ));
       
-      return (content.join(''))
-}
+//       return (content.join(''))
+// }
