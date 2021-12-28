@@ -13,6 +13,7 @@ const initDeck = async () => {
   document.getElementById("setup").innerHTML = "<div></div>";
   document.getElementById("value").innerHTML = "<div>Value = 0</div>";
   document.getElementById("finalCard").innerHTML = "<div></div>";
+  document.getElementById("histo").innerHTML = "<div></div>";
   arrCard = [];
   valueCard = 0;
   valueAllCards = 0;
@@ -34,12 +35,15 @@ const drawCard = async (deckID) => {
     ).then(response => response.json())
 
     arrCard = cardsFetch;
+    let textValueCard = "";
 
     if(arrCard.cards[0].value == "JACK" || arrCard.cards[0].value == "QUEEN" || arrCard.cards[0].value == "KING"){
       valueCard = 10;
+      textValueCard = " (" + valueCard + ")";
     }
     else if(arrCard.cards[0].value == "ACE"){
       valueCard = 0;
+      textValueCard = " (" + valueCard + ")";
     }
     else{
       valueCard = arrCard.cards[0].value;
@@ -50,10 +54,9 @@ const drawCard = async (deckID) => {
 
     document.getElementById("value").innerHTML = "<div>Value = " + valueAllCards + "</div>";
 
-    document.getElementById("setup").innerHTML += "<div id='uniteCard'>" + 
-      "<div id='textCard'>" + arrCard.cards[0].value + " and " + arrCard.cards[0].suit + "</div>" + 
-      "<img id='imgCard' src=" + arrCard.cards[0].image + ">" +
-    "</div>";
+    document.getElementById("setup").innerHTML = "<div id='uniteCard'>" + "<img id='imgCard' src=" + arrCard.cards[0].image + ">" + "</div>";
+
+    document.getElementById("histo").innerHTML += "<div id='textCard'>Card: " + arrCard.cards[0].suit + ", value: " + arrCard.cards[0].value + textValueCard + "</div>"
 
     if(valueAllCards > 21){
       end = true;
@@ -67,13 +70,22 @@ const drawCard = async (deckID) => {
 
 
 
-// const displayCards = async () => {
+const stopTheGame = async () => {
 
-//     const cardArray = await drawCard();
+    await drawCard(idDeck.deck_id);
 
-//     const content = cardArray.cards.map((item, key) => (
-//         `<img src="${item.image}"/>`
-//       ));
-      
-//       return (content.join(''))
-// }
+    document.getElementById("finalCard").innerHTML = "<div>La dernière carte est le " + arrCard.cards[0].value + " de " + arrCard.cards[0].suit + "</div>";
+    
+    if(valueAllCards > 21){
+      document.getElementById("state").innerHTML = "C'est gagné";
+      document.getElementById("endgame").style.display = "block";
+      document.getElementById("canvas").style.display = "block";
+      console.log("gagné");
+    }
+    else{
+      document.getElementById("state").innerHTML = "C'est perdu";
+      document.getElementById("endgame").style.display = "block";
+      document.getElementById("canvas").style.display = "block";
+      console.log("perdu")
+    }
+}

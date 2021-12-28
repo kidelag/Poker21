@@ -5,19 +5,28 @@
 	<title>Poker 21</title>
 	<meta charset="UTF-8" />
     <link rel="stylesheet" href="./src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <!-- Target Balise -->
 	    <div id="app">
-            <button id="initDeck">Shuffle card</button>
-            <button id="showIdDeck" style="display: none">Show next card</button>
+            <button id="initDeck">Start the game</button>
             <button id="stopTheGame"style="display:none">Stop the game</button>
             <div id="state">Aucune partie en cours</div>
             <div id="value">Value = 0</div>
             <div id="finalCard"></div>
-            <div class="displayCards">
+            <div id="displayCards">
+                <div id="showIdDeck" style="display: none">
+                    <img src="./resized.jpg" alt="deck card">
+                </div>
                 <div id="setup"></div>
+                <div id="histo"></div>
+            </div>
+            <div id="endgame" style="display:none">
+                <div id="canvas" style="display:none"></div>
             </div>
         </div>
     <!-- Target Balise -->
