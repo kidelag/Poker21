@@ -1,6 +1,6 @@
 let end = false;
 
-
+//click sur le bouton "initDeck"
 document.getElementById("initDeck").addEventListener("click", function() {
   end = false;
   document.getElementById("initDeck").innerHTML = "Restart the game";
@@ -8,19 +8,34 @@ document.getElementById("initDeck").addEventListener("click", function() {
   initDeck();
   document.getElementById("showIdDeck").style.display = "inline-block";
   document.getElementById("stopTheGame").style.display = "inline-block";
+  document.getElementById("replay").style.display = "inline-block";
 })
 
+//tire une carte
 document.getElementById("showIdDeck").addEventListener("click", function() {
-  if(!end){
-  drawCard(idDeck.deck_id);
-  }  
+  console.log(deck.remaining);
+  if(deck.remaining > 0){
+    if(!end){
+    drawCard(deck.deck_id);
+    }  
+  }
 })
 
+//click sur le bouton "replay"
+document.getElementById("replay").addEventListener("click", function() {
+  if(end){
+  replay();
+  end = false;
+  }
+})
+
+//fermer la pop-up
 document.getElementById("endgame").addEventListener('click', function() {
   document.getElementById("endgame").style.display = "none";
   document.getElementById("canvas").style.display = "none";
 })
 
+//finir la partie
 document.getElementById("stopTheGame").addEventListener("click", function() {
   if(!end){
       end = true;
@@ -38,13 +53,3 @@ document.getElementById("stopTheGame").addEventListener("click", function() {
     } 
   }
 })
-
-// const test = async () => {
-//   while(true){
-//     setTimeout(() => {
-//       console.log('value =',valueAllCards)
-//     },1500)
-//   }
-// }
-
-// test();

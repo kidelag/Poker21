@@ -1,0 +1,163 @@
+:root{
+    --deg:0deg;
+    --idCard:"imgCard0";
+}
+
+body{
+    font-family: 'Lato',sans-serif;
+    background-image: url('../Image/fond-table-poker-couleur-verte_47243-1094.png');
+}
+
+#app {
+    color: white;
+    margin: 1em;
+}
+
+div#state {
+    margin-top: .7em;
+    font-size: 1.4em;
+}
+
+div#value {
+    margin-top: .7em;
+}
+
+div#value>div{
+    font-size: 1.4em;
+}
+
+div#finalCard {
+    margin-top: .7em;
+    font-size: 1.4em;
+}
+
+
+div#showIdDeck{
+    cursor: pointer;
+    z-index: 1;
+    /* flex-basis: min-content; */
+    flex: 1;
+}
+
+div#setup{
+    display: flex;
+    justify-content: flex-start;
+    /* background-color: blueviolet; */
+    /* flex-basis: max-content; */
+    flex: 9;
+}
+
+div#histo{
+    /* flex-basis: min-content; */
+    flex: 2;
+    background-color: rgb(0, 0, 0, .5);
+    padding: 1em;
+}
+
+div#displayCards{
+    min-height: 318px;
+    display: flex;
+    margin-top: 2em;
+    /* justify-content: space-between; */
+}
+
+
+
+/* #imgCard{
+    animation: 1.5s slidein;
+    margin-left: -100%;
+    transform: translateX(100%) rotate(var(--deg));
+    transition: transform 2000ms linear;
+} */
+
+/* @keyframes slidein {
+    from { transform: translate(-100%,0%) rotate(0deg)}
+    to {transform: translate(0%,0%) rotate(var(--deg))}
+} */
+
+/*#imgCard{
+    transform: rotate(var(--deg));
+    position: relative;
+} */
+
+div#navBar{
+    display: flex;
+}
+
+div#buttonContainer{
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div#blankNavBar{
+    flex: 6;
+}
+
+div#initDeckContainer{
+    flex: 1;
+}
+
+button#initDeck{
+    background-color: rgb(26, 95, 151);
+    color: rgb(255, 255, 255);
+}
+
+button#initDeck:hover{
+    background-color: rgb(19, 74, 116);
+    color: rgb(255, 255, 255);
+}
+
+button#stopTheGame{
+    background-color: rgb(155, 22, 22);
+    color: rgb(255, 255, 255);
+}
+
+button#stopTheGame:hover{
+    background-color: rgb(128, 22, 22);
+    color: rgb(255, 255, 255);
+}
+
+button {
+    
+    background-image: none;
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    font-family: 'Lato',sans-serif;
+    font-size: 14px;
+    margin: 0 0.25em 0 0;
+    padding: 0.78571429em 1.5em 0.78571429em;
+    text-transform: none;
+    text-shadow: none;
+    /* font-weight: 700; */
+    line-height: 1em;
+    /* font-style: normal; */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.28571429rem;
+}
+
+div#titleHisto{
+    margin-bottom: 0.6em;
+    font-size: 1.7em;
+}
+
+div#endgame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 50%;
+    height: 100vh;
+    width: 100vw;
+}
+
+div#canvas{
+    margin: 25vh 0 0 30vw;
+    height: 50vh;
+    width: 40vw;
+}
