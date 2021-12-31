@@ -1,4 +1,10 @@
 let end = false;
+let deck;
+let arrCard = [];
+let valueCard = 0;
+let valueAllCards = 0;
+let randomNumber;
+let idCard = 0;
 
 //click sur le bouton "initDeck"
 document.getElementById("initDeck").addEventListener("click", function() {
@@ -30,9 +36,9 @@ document.getElementById("replay").addEventListener("click", function() {
 })
 
 //fermer la pop-up
-document.getElementById("endgame").addEventListener('click', function() {
+document.getElementById("backgroundCanvas").addEventListener('click', function() {
   document.getElementById("endgame").style.display = "none";
-  document.getElementById("canvas").style.display = "none";
+  // document.getElementById("canvas").style.display = "none";
 })
 
 //finir la partie
@@ -45,7 +51,7 @@ document.getElementById("stopTheGame").addEventListener("click", function() {
     else {
 
       if(valueAllCards < 21) {
-        stopTheGame();
+        stopTheGame(true);
       }
       else{
         document.getElementById("state").innerHTML = "C'est perdu";

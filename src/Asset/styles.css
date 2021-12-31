@@ -146,7 +146,20 @@ div#titleHisto{
     font-size: 1.7em;
 }
 
-div#endgame{
+div#canvas{
+    position: absolute;
+    top: 25vh;
+    left: 30vw;
+    background-color: rgb(233, 233, 233);
+    color: rgb(0, 0, 0);
+    opacity: 100%;
+    /* margin: 25vh 0 0 30vw; */
+    height: 50vh;
+    width: 40vw;
+    z-index: 5;
+}
+
+div#backgroundCanvas{
     position: absolute;
     top: 0;
     left: 0;
@@ -154,10 +167,5 @@ div#endgame{
     opacity: 50%;
     height: 100vh;
     width: 100vw;
-}
-
-div#canvas{
-    margin: 25vh 0 0 30vw;
-    height: 50vh;
-    width: 40vw;
+    z-index: 3;
 }

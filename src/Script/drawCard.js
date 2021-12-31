@@ -28,16 +28,20 @@ const drawCard = async (deckID) => {
     
         document.getElementById("imgCard" + deck.remaining).style.transform = "rotate(" + randomNumber + "deg)";
         document.getElementById("imgCard" + deck.remaining).style.position = "absolute";
-    
+        console.log(textValueCard);
         document.getElementById("histo").innerHTML += "<div id='textCard'>Card: " + arrCard.cards[0].suit + ", value: " + arrCard.cards[0].value + textValueCard + "</div>"
     
-        if(valueAllCards > 21){
+        if(valueAllCards >= 21){
             end = true;
-            document.getElementById("state").innerHTML = "C'est perdu";
+            stopTheGame(false);
         }
+        // else if(valueAllCards === 21){
+        //     end = true;
+        //     document.getElementById("state").innerHTML = "C'est gagné";
+        // }
     
         idCard++;
-        return await cardsFetch;
+        // return await cardsFetch;
     
     }
     catch (error) {
@@ -48,6 +52,8 @@ const drawCard = async (deckID) => {
 
   const convertValue = async () => {
     try{
+        console.log("test")
+        console.log(arrCard.cards[0].value);
         if(arrCard.cards[0].value == "JACK" || arrCard.cards[0].value == "QUEEN" || arrCard.cards[0].value == "KING"){
             valueCard = 10;
             textValueCard = " (" + valueCard + ")";
