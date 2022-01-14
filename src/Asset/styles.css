@@ -6,6 +6,7 @@
 body{
     font-family: 'Lato',sans-serif;
     background-image: url('../Image/fond-table-poker-couleur-verte_47243-1094.png');
+    overflow-x: hidden;
 }
 
 #app {
@@ -61,25 +62,6 @@ div#displayCards{
     /* justify-content: space-between; */
 }
 
-
-
-/* #imgCard{
-    animation: 1.5s slidein;
-    margin-left: -100%;
-    transform: translateX(100%) rotate(var(--deg));
-    transition: transform 2000ms linear;
-} */
-
-/* @keyframes slidein {
-    from { transform: translate(-100%,0%) rotate(0deg)}
-    to {transform: translate(0%,0%) rotate(var(--deg))}
-} */
-
-/*#imgCard{
-    transform: rotate(var(--deg));
-    position: relative;
-} */
-
 div#navBar{
     display: flex;
 }
@@ -118,8 +100,17 @@ button#stopTheGame:hover{
     color: rgb(255, 255, 255);
 }
 
-button {
-    
+button#replay{
+    background-color: rgb(143, 143, 143);
+    color: rgb(255, 255, 255);
+}
+
+button#replay:hover{
+    background-color: rgb(117, 117, 117);
+    color: rgb(255, 255, 255);
+}
+
+button{
     background-image: none;
     cursor: pointer;
     display: inline-block;
@@ -150,13 +141,14 @@ div#canvas{
     position: absolute;
     top: 25vh;
     left: 30vw;
-    background-color: rgb(233, 233, 233);
-    color: rgb(0, 0, 0);
+    background-color: rgb(42, 42, 42);
+    color: rgb(255, 255, 255);
     opacity: 100%;
     /* margin: 25vh 0 0 30vw; */
-    height: 50vh;
+    height: 60vh;
     width: 40vw;
     z-index: 5;
+    text-align: center;
 }
 
 div#backgroundCanvas{
@@ -168,4 +160,35 @@ div#backgroundCanvas{
     height: 100vh;
     width: 100vw;
     z-index: 3;
+}
+
+div#errorCanvas{
+    padding: 2em;
+    margin: 4em 0;
+    background-color: rgba(73, 73, 73, 0.5);
+    width: 50vw;
+    color: rgb(255, 255, 255);
+}
+
+div#textError{
+    margin-bottom: 1em;
+}
+
+button#buttonError{
+    background-color: rgb(155, 22, 22);
+    color: rgb(255, 255, 255);
+}
+
+button#buttonError:hover{
+    background-color: rgb(128, 22, 22);
+    color: rgb(255, 255, 255);
+}
+
+div#connection{
+    color: white;
+    margin: /*15em 1em */2em 1em;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1.5em 2em;
+    display: flex;
+    justify-content: space-around;
 }
