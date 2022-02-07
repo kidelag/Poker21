@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Poker 21</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Site du jeu appelé 'le jeu du 21'">
+        <meta name="keywords" content="blackjack,poker,jeu,21,carte,jeu de carte,jeu du 21">
+        <meta name="viewport" content= "width=device-width, initial-scale=1.0">
+
+        <link rel="icon" href="./Image/favicon.png">
+        <link rel="stylesheet" href="./Asset/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+            <div id="app">         
+
+                <div id="finalCard"></div>
+                <div class="game">
+                    <div class="wrapper_settings">
+                        <div id="state">Aucune partie en cours</div>
+                        <div id="value">Value: 0</div>
+                        <div id="cardLeft">Number of cards remaining: 52</div>
+                        <div id="drawNumber">
+                            <input type="number" id="inputDraw" min="0" max="52">
+                            <button id="buttonDrawNumber">Submit</button>
+                        </div>
+                    </div>
+                    <div id="displayCards">
+                        <div id="showIdDeck">
+                            <img src="./Image/resized.jpg" alt="deck card">
+                        </div>
+                        <div id="setup"></div>
+                        <div id="histo">
+                            <div id="titleHisto">Last cards drawn</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="endgame" style="display:none">
+                    <div id="backgroundCanvas"></div>
+                    <div id="canvas"></div>
+                </div>
+
+                <div id="errorCanvas" style="display:none">
+                    <div id="textError"></div> 
+                    <button id="buttonError">Clean error</button>
+                </div>
+
+                <div id="controls">
+                    <div id="buttonContainer">
+                        <button id="replay" style="display:none">Replay</button>
+                        <button id="stopTheGame" style="display:none">Stop the game</button>
+                    </div>
+                    <div id="blankcontrols"></div>
+                    <div id="initDeckContainer">
+                        <button id="initDeck">Start the game</button>
+                    </div>
+                    <button id="buttonReset">Reset</button>
+                </div>   
+            </div>
+
+            <div id="connection">
+                <div id="connectNetwork">Connected to the network: Waiting</div>
+                <div id="connectAPI">Connected to the API: Waiting</div>
+            </div>
+
+        <!-- <script src="./Script/Cards.js"></script> -->
+        <script src="./Script/index.js"></script>
+        <script src="./Script/drawCard.js"></script>
+        <script src='./Script/stopTheGame.js'></script>
+        <script src="./Script/initDeck.js"></script>
+        <script src='./Script/replay.js'></script>
+        
+    </body>
+
+    
+</html>
