@@ -216,7 +216,7 @@ button{
     margin-top: 19vh;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 1050px) {
     .game {
         display: grid;
 
