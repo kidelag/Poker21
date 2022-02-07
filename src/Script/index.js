@@ -63,6 +63,7 @@ else if(localStorage.getItem("firstOpen") === null){
 
 //click sur le bouton "initDeck"
 document.getElementById("initDeck").addEventListener("click", function() {
+  console.log("there");
   localStorage.setItem("firstOpen", false);
   end = false;
   document.getElementById("initDeck").innerHTML = "Restart the game";
@@ -90,7 +91,7 @@ document.getElementById("showIdDeck").addEventListener("click", function() {
 document.getElementById("buttonDrawNumber").addEventListener('click', function() {
   let value = parseInt(document.getElementById("inputDraw").value);
 
-  if(value > 0 || value != ''){
+  if((value > 0 || value != '') && !end){
     drawCard(deck.deck_id,value);
   }
 })
@@ -151,5 +152,6 @@ document.getElementById("buttonError").addEventListener("click", function() {
 //clear localSession
 document.getElementById("buttonReset").addEventListener("click", function() {
   localStorage.clear();
+  location.reload();
   console.log("localStorage cleared")
 })

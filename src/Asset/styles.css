@@ -14,98 +14,109 @@ body{
     margin: 1em;
 }
 
-div#state {
+#state {
     margin-top: .7em;
     font-size: 1.4em;
 }
 
-div#value {
+#value {
     margin-top: .7em;
 }
 
-div#value>div{
+#value>div{
     font-size: 1.4em;
 }
 
-div#finalCard {
+#finalCard {
     margin-top: .7em;
     font-size: 1.4em;
 }
 
 
-div#showIdDeck{
+#showIdDeck{
     cursor: pointer;
     z-index: 1;
     /* flex-basis: min-content; */
     flex: 1;
 }
 
-div#setup{
+#setup{
     display: flex;
     justify-content: flex-start;
-    /* background-color: blueviolet; */
-    /* flex-basis: max-content; */
     flex: 9;
 }
 
-div#histo{
-    /* flex-basis: min-content; */
+#histo{
+    height: 100%;
     flex: 2;
     background-color: rgb(0, 0, 0, .5);
     padding: 1em;
 }
 
-div#displayCards{
+#displayCards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr );
+
     min-height: 318px;
-    display: flex;
+    width: 100%;
+
     margin-top: 2em;
-    /* justify-content: space-between; */
+
+    justify-content: space-between;
 }
 
-div#navBar{
+#controls{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
-div#buttonContainer{
+#buttonReset {
+    margin-top: 2vh;
+}
+
+#buttonContainer{
     flex: 2;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    margin: 5vh 0 2vh 0;
 }
 
-div#blankNavBar{
+#blankcontrols{
     flex: 6;
 }
 
-div#initDeckContainer{
+#initDeckContainer{
     flex: 1;
 }
 
-button#initDeck{
+#initDeck{
     background-color: rgb(26, 95, 151);
     color: rgb(255, 255, 255);
 }
 
-button#initDeck:hover{
+#initDeck:hover{
     background-color: rgb(19, 74, 116);
     color: rgb(255, 255, 255);
 }
 
-button#stopTheGame{
+#stopTheGame{
     background-color: rgb(155, 22, 22);
     color: rgb(255, 255, 255);
 }
 
-button#stopTheGame:hover{
+#stopTheGame:hover{
     background-color: rgb(128, 22, 22);
     color: rgb(255, 255, 255);
 }
 
-button#replay{
+#replay{
     background-color: rgb(143, 143, 143);
     color: rgb(255, 255, 255);
 }
 
-button#replay:hover{
+#replay:hover{
     background-color: rgb(117, 117, 117);
     color: rgb(255, 255, 255);
 }
@@ -132,12 +143,12 @@ button{
     border-radius: 0.28571429rem;
 }
 
-div#titleHisto{
+#titleHisto{
     margin-bottom: 0.6em;
     font-size: 1.7em;
 }
 
-div#canvas{
+#canvas{
     position: absolute;
     top: 25vh;
     left: 30vw;
@@ -151,7 +162,7 @@ div#canvas{
     text-align: center;
 }
 
-div#backgroundCanvas{
+#backgroundCanvas{
     position: absolute;
     top: 0;
     left: 0;
@@ -162,7 +173,7 @@ div#backgroundCanvas{
     z-index: 3;
 }
 
-div#errorCanvas{
+#errorCanvas{
     padding: 2em;
     margin: 4em 0;
     background-color: rgba(73, 73, 73, 0.5);
@@ -170,25 +181,37 @@ div#errorCanvas{
     color: rgb(255, 255, 255);
 }
 
-div#textError{
+#textError{
     margin-bottom: 1em;
 }
 
-button#buttonError{
+#buttonError{
     background-color: rgb(155, 22, 22);
     color: rgb(255, 255, 255);
 }
 
-button#buttonError:hover{
+#buttonError:hover{
     background-color: rgb(128, 22, 22);
     color: rgb(255, 255, 255);
 }
 
-div#connection{
-    color: white;
-    margin: /*15em 1em */2em 1em;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 1.5em 2em;
+#connection{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
     display: flex;
     justify-content: space-around;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    padding: 1.5em 2em;
+}
+
+.game {
+    display: flex;
+
+    margin-top: 19vh;
 }

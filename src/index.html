@@ -14,34 +14,27 @@
     </head>
 
     <body>
-            <div id="app">
+            <div id="app">         
 
-                <div id="navBar">
-                    <div id="buttonContainer">
-                        <button id="replay" style="display:none">Replay</button>
-                        <button id="stopTheGame" style="display:none">Stop the game</button>
-                    </div>
-                    <div id="blankNavBar"></div>
-                    <div id="initDeckContainer">
-                        <button id="initDeck">Start the game</button>
-                    </div>
-                </div>            
-
-                <div id="state">Aucune partie en cours</div>
-                <div id="value">Value: 0</div>
-                <div id="cardLeft">Number of cards remaining: 52</div>
-                <div id="drawNumber">
-                    <input type="number" id="inputDraw" min="0" max="52">
-                    <button id="buttonDrawNumber">Submit</button>
-                </div>
                 <div id="finalCard"></div>
-                <div id="displayCards">
-                    <div id="showIdDeck" style="display: none">
-                        <img src="./Image/resized.jpg" alt="deck card">
+                <div class="game">
+                    <div class="wrapper_settings">
+                        <div id="state">Aucune partie en cours</div>
+                        <div id="value">Value: 0</div>
+                        <div id="cardLeft">Number of cards remaining: 52</div>
+                        <div id="drawNumber">
+                            <input type="number" id="inputDraw" min="0" max="52">
+                            <button id="buttonDrawNumber">Submit</button>
+                        </div>
                     </div>
-                    <div id="setup"></div>
-                    <div id="histo">
-                        <div id="titleHisto">Last cards drawn</div>
+                    <div id="displayCards">
+                        <div id="showIdDeck">
+                            <img src="./Image/resized.jpg" alt="deck card">
+                        </div>
+                        <div id="setup"></div>
+                        <div id="histo">
+                            <div id="titleHisto">Last cards drawn</div>
+                        </div>
                     </div>
                 </div>
                 <div id="endgame" style="display:none">
@@ -53,8 +46,19 @@
                     <div id="textError"></div> 
                     <button id="buttonError">Clean error</button>
                 </div>
+
+                <div id="controls">
+                    <div id="buttonContainer">
+                        <button id="replay" style="display:none">Replay</button>
+                        <button id="stopTheGame" style="display:none">Stop the game</button>
+                    </div>
+                    <div id="blankcontrols"></div>
+                    <div id="initDeckContainer">
+                        <button id="initDeck">Start the game</button>
+                    </div>
+                    <button id="buttonReset">Reset</button>
+                </div>   
             </div>
-            <button id="buttonReset">Reset</button>
 
             <div id="connection">
                 <div id="connectNetwork">Connected to the network: Waiting</div>
